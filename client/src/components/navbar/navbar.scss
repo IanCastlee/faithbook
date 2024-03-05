@@ -1,0 +1,246 @@
+@import "../../style.scss";
+
+.navbar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 30px;
+    height: 60px;
+    background-color: themed("nav");
+    border-bottom: 1px solid themed("border_b");
+
+    //box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 4.5;
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        background: linear-gradient(to right, rgb(247, 244, 247), #f2f4f5);
+        background-clip: text;
+        color: rgb(88, 88, 194);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .wrd {
+          display: flex;
+          align-items: center;
+          margin-left: -20px;
+
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex: 3;
+
+      .home {
+        display: flex;
+        align-items: center;
+        span {
+          font-weight: bold;
+          cursor: pointer;
+          font-size: 30px;
+          color: #fff;
+        }
+        p {
+          font-size: 14px;
+          cursor: pointer;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+      .testimony {
+        display: flex;
+        align-items: center;
+        span {
+          font-weight: bold;
+          cursor: pointer;
+          font-size: 30px;
+          color: #fff;
+        }
+        p {
+          font-size: 14px;
+          cursor: pointer;
+          color: #fff;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 20px;
+      flex: 4.5;
+
+      .search-wrapper {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        // background-color: #ffdfdf;
+        background-color: themed("comment_bc");
+        border: themed("border_f" solid 1px);
+        width: 100%;
+        padding: 7px;
+        gap: 3px;
+        border-radius: 25px;
+        overflow: hidden;
+        padding-left: 20px;
+        @include mobile {
+          padding: 0;
+          background-color: themed("nav");
+        }
+
+        .searcIcon {
+          font-size: 30px;
+          color: themed("txt");
+
+          @include mobile {
+            font-size: 25px;
+          }
+        }
+
+        input {
+          width: 100%;
+          height: 30px;
+          border: none;
+          // background-color: #ffdfdf;
+          background-color: themed("comment_bc");
+          color: themed("txt");
+          font-size: 15px;
+
+          @include mobile {
+            display: none;
+          }
+        }
+        input:focus {
+          outline: none;
+        }
+        input::placeholder {
+          color: themed("txt");
+        }
+      }
+
+      .nav-friend-wrapper {
+        position: relative;
+        .nav_iconn1 {
+          cursor: pointer;
+          height: 24px;
+          width: 24px;
+        }
+
+        .dot_1 {
+          height: 12px;
+          width: 12px;
+          background-color: green;
+          border-radius: 50%;
+          position: absolute;
+          right: -5px;
+          top: -1px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 8px;
+          border: 1px solid white;
+        }
+      }
+
+      .nav-mail-wrapper {
+        position: relative;
+        .nav_iconn {
+          cursor: pointer;
+          height: 20px;
+          width: 20px;
+        }
+
+        .dot_1 {
+          height: 12px;
+          width: 12px;
+          background-color: green;
+          border-radius: 50%;
+          position: absolute;
+          right: -5px;
+          top: -1px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 8px;
+          border: 1px solid white;
+        }
+      }
+
+      .nav-bell-wrapper {
+        position: relative;
+        .nav_iconn {
+          cursor: pointer;
+          height: 20px;
+          width: 20px;
+        }
+
+        .dot_2 {
+          height: 12px;
+          width: 12px;
+          background-color: green;
+          border-radius: 50%;
+          position: absolute;
+          right: -5px;
+          top: -1px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 8px;
+          border: 1px solid white;
+        }
+      }
+
+      .nav_current_user {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        img {
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 3px solid rgb(140, 140, 224);
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+          color: themed("txt");
+          white-space: nowrap;
+
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

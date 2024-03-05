@@ -1,0 +1,30 @@
+@import "../../../style.scss";
+.fnav {
+  @include themify($themes) {
+    height: 60px;
+    background-color: themed("lb");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    position: sticky;
+
+    @include mobile {
+      border-radius: 0;
+    }
+
+    .list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+
+      .item {
+        list-style: none;
+        font-size: 14px;
+        font-weight: 700;
+        color: themed("txt");
+      }
+    }
+  }
+}

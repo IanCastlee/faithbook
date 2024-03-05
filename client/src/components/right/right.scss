@@ -1,0 +1,129 @@
+@import "../../style.scss";
+
+.rightbar {
+  @include themify($themes) {
+    width: 25%;
+    background-color: themed("cb");
+    top: 60px;
+    height: calc(100vh - 60px);
+    position: sticky;
+    overflow: scroll;
+    padding: 10px 0 0 0;
+
+    @include mobile {
+      display: none;
+    }
+
+    .rightbar-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .right-column1 {
+        width: 100%;
+        padding: 10px 10px 10px 20px;
+        // background: linear-gradient(to left, #acd3e7, #fff);
+        border-radius: 5px;
+        height: 100px;
+        background-color: themed("lb");
+
+        .bday-title {
+          font-size: 16px;
+          font-weight: bold;
+          color: themed("txt");
+        }
+
+        .col1-wrapper {
+          display: flex;
+          align-items: center;
+          margin-top: 5px;
+
+          .bday-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+
+            .bdy-name {
+              font-size: 15px;
+              color: themed("txt");
+              strong {
+                color: themed("txt");
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+      .right-column2 {
+        width: 100%;
+        padding: 10px 10px 10px 20px;
+        border-radius: 5px;
+        background-color: themed("lb");
+
+        .knock-title {
+          font-size: 16px;
+          font-weight: bold;
+          color: themed("txt");
+          margin-bottom: 10px;
+        }
+        .knock-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+
+          .knock-info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .knockimg {
+              height: 35px;
+              width: 35px;
+              border-radius: 5px;
+              border: 2px solid rgb(178, 178, 233);
+            }
+            .knock-name {
+              font-size: 14px;
+              font-weight: 500;
+              color: themed("txt");
+            }
+          }
+
+          .btn-knock {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .btn-open {
+              cursor: pointer;
+              border: none;
+              padding: 5px 15px;
+              background-color: rgb(190, 186, 186);
+              font-size: 12px;
+              font-weight: 500;
+              color: rgb(44, 42, 42);
+              border-radius: 5px;
+            }
+          }
+          .btn-close {
+            cursor: pointer;
+            border: none;
+            padding: 5px 15px;
+            background-color: #b80000;
+            font-size: 12px;
+            font-weight: 500;
+            color: whitesmoke;
+            border-radius: 5px;
+          }
+        }
+      }
+      .right-column3 {
+        height: 200px;
+        background-color: themed("lb");
+        border-radius: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "../../../style.scss";
+
+.suggeted {
+  @include themify($themes) {
+    background-color: themed("lb");
+    padding: 15px;
+
+    .suggeted-container {
+      width: 100%;
+
+      .topS {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title {
+          font-size: 18px;
+          color: themed("txt");
+          font-weight: 700;
+        }
+
+        .searchS {
+          height: 40px;
+          width: 300px;
+          background-color: themed("cb");
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          padding-left: 20px;
+          border-radius: 25px;
+          @include mobile {
+            width: 250px;
+          }
+
+          .search {
+            height: 35px;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            color: themed("txt");
+            background-color: themed("cb");
+          }
+          .search:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .hr {
+        border: none;
+        height: 0.2px;
+        background-color: themed("hr2");
+        margin: 15px;
+      }
+
+      .suggeted-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid themed("border_f");
+
+        .img-name-add {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 3px;
+          .img-name {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .img {
+              height: 35px;
+              width: 35px;
+              border-radius: 10px;
+              border: 1px solid themed("hr");
+            }
+
+            .name {
+              font-size: 16px;
+              font-weight: 500;
+              cursor: pointer;
+              color: themed("txt");
+            }
+          }
+
+          .add {
+            font-size: 12px;
+            font-weight: 400;
+            color: themed("txt");
+            margin-left: 37px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+          }
+        }
+      }
+
+      .actionS {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        .btn-follow {
+          border: none;
+          padding: 5px 15px;
+          font-size: 14px;
+          font-weight: 500;
+          color: white;
+          background-color: #0079ff;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

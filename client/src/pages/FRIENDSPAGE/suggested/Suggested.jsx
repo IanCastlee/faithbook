@@ -1,0 +1,74 @@
+import "./suggested.scss";
+import { Link } from "react-router-dom";
+
+import { IoLocationSharp } from "react-icons/io5";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { makeRequest } from "../../../axios";
+
+const Suggested = () => {
+  //const queryClient = useQueryClient();
+
+  // S U G G E S T  I O N ===> G E T
+  const { isPending, data: suggestionData } = useQuery({
+    queryKey: ["suggestionn"],
+    queryFn: () =>
+      makeRequest.get("/friendReqs/suggestion").then((res) => {
+        return res.data;
+      }),
+  });
+
+  return (
+    <div className="suggeted">
+      <div className="suggeted-container">
+        <div className="topS">
+          <span className="title">Knock</span>
+          <div className="searchS">
+            <input type="text" className="search" placeholder="Search..." />
+          </div>
+        </div>
+        <hr className="hr" />
+
+        {isPending
+          ? "loading.."
+          : suggestionData.map((s) => (
+              <div className="suggeted-wrapper" key={s.id}>
+                <div className="img-name-add">
+                  <div className="img-name">
+                    <img
+                      src={
+                        s.profilePic === ""
+                          ? "../assets/cvp.jpg"
+                          : "../upload/" + s.profilePic
+                      }
+                      alt=""
+                      className="img"
+                    />
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to={`/profile/${s.id}`}
+                    >
+                      <span className="name">{s.name}</span>
+                    </Link>
+                  </div>
+                  <span className="add">
+                    <IoLocationSharp className="addIcon" />
+                    {s.city}
+                  </span>
+                </div>
+
+                <div className="actionS">
+                  <button
+                    className="btn-follow"
+                    onClick={() => handleAccept(s.id)}
+                  >
+                    Knock
+                  </button>
+                </div>
+              </div>
+            ))}
+      </div>
+    </div>
+  );
+};
+
+export default Suggested;

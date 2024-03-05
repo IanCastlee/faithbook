@@ -1,0 +1,50 @@
+@import "../../style.scss";
+
+.homee {
+  @include themify($themes) {
+    flex: 6;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow: scroll;
+    position: sticky;
+    background-color: themed("cb");
+
+    @include mobile {
+      width: 100%;
+      background-color: themed("mobile_bg");
+    }
+
+    .main-home {
+      padding: 0 100px;
+
+      @include mobile {
+        padding: 0;
+      }
+
+      .title-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: themed("post_wrapper");
+        margin-bottom: 2px;
+        .pl {
+          height: 5px;
+          width: 100%;
+        }
+        .title2 {
+          align-self: center;
+          font-size: 18px;
+          font-weight: 900;
+          color: themed("txt");
+          margin: 5px 0;
+          padding: 0 5px;
+        }
+        .pr {
+          height: 5px;
+
+          width: 100%;
+        }
+      }
+    }
+  }
+}

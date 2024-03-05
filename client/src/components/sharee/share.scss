@@ -1,0 +1,100 @@
+@import "../../style.scss";
+.share {
+  @include themify($themes) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: themed("post_wrapper");
+    padding: 5px;
+    margin-bottom: 1px;
+
+    .share-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+
+      .share-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+
+        .share-top-left {
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          border: 0.5px solid themed("hr2");
+          padding: 2px 5px;
+          border-radius: 3px;
+
+          .shareIconPhoto {
+            font-size: 20px;
+            color: rgb(141, 141, 223);
+            cursor: pointer;
+          }
+          span {
+            font-size: 12px;
+            font-weight: 500;
+            color: blue;
+            cursor: pointer;
+          }
+        }
+
+        .share-top-right {
+          .file {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
+
+      .text-area-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+
+        .share_input {
+          width: 100%;
+          border: none;
+          font-size: 16px;
+          font-weight: 300;
+          padding-left: 20px;
+          //border: 1px solid themed("hr");
+          background-color: themed("post_wrapper");
+          color: themed("txt");
+          letter-spacing: 0.5px;
+        }
+
+        .share_input::placeholder {
+          color: themed("txt");
+        }
+
+        .share_input:focus {
+          outline: none;
+        }
+
+        .hr {
+          border: none;
+          height: 0.2px;
+          background-color: themed("hr2");
+          margin-bottom: 15px;
+        }
+
+        .btn-share {
+          padding: 3px 15px;
+          align-self: flex-end;
+          cursor: pointer;
+          background-color: green;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+        }
+        .btn-share:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

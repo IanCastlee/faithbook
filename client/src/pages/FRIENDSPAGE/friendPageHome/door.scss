@@ -1,0 +1,7 @@
+@import "../../../style.scss";
+
+.door {
+  @include themify($themes) {
+    padding: 10px 100px;
+  }
+}

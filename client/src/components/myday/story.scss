@@ -1,0 +1,184 @@
+@import "../../style.scss";
+
+.stories-container {
+  @include themify($themes) {
+    width: 99%;
+    overflow-x: scroll; // Set overflow-x to scroll
+    overflow-y: hidden; // Hide vertical scrollbar
+    height: 100px;
+    margin: 5px 0;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+
+    @include mobile {
+      padding: 0;
+    }
+
+    .bckwrd {
+      position: absolute;
+      left: 15px;
+      margin: auto;
+      z-index: 300;
+      font-size: 30px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+
+      color: rgb(156, 149, 149);
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .bckwrd:hover {
+      background-color: transparent;
+      backdrop-filter: blur(10px);
+    }
+
+    .stories-wrapper {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      height: 100px;
+      padding: 2px;
+      gap: 5px;
+
+      transition: transform 0.5s ease-in-out;
+      -webkit-overflow-scrolling: touch;
+
+      .story-wrapper1 {
+        width: 80px;
+        background-color: themed("lb");
+        height: 100%;
+        border-radius: 5px;
+        // border: themed("story_b") 1px solid;
+        overflow: hidden;
+        border: 1px solid themed("post_wrapper");
+
+        transition: scroll 0.5s ease-in-out;
+        -webkit-overflow-scrolling: touch;
+
+        .bgimg {
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 100%;
+          height: 85%;
+          overflow: hidden;
+
+          .imgP {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .name_poster {
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+          font-weight: 700;
+          color: themed("txt");
+          // border: themed("story_b") 0.5px solid;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          cursor: pointer;
+          overflow: hidden;
+        }
+      }
+      //
+
+      .story-wrapper {
+        width: 80px;
+        background-color: themed("lb");
+        height: 100%;
+        border-radius: 5px;
+        // border: themed("story_b") 1px solid;
+        overflow: hidden;
+        border: 1px solid themed("post_wrapper");
+
+        .bgimg {
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 100%;
+          height: 85%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          .coverPic {
+            width: 100%;
+            height: 100%;
+          }
+
+          .descc {
+            font-size: 10px;
+            font-weight: 400;
+            word-spacing: 1px;
+            text-align: start;
+            word-wrap: break-word; /* or overflow-wrap: break-word; */
+            //white-space: pre-line;
+            max-width: 50px;
+            max-height: 50px;
+            overflow: hidden;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: absolute;
+          }
+        }
+
+        .name_poster {
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+          font-weight: 500;
+          color: themed("txt");
+          // border: themed("story_b") 1px solid;
+          overflow: hidden;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .frwrd {
+    position: absolute;
+
+    right: 10px;
+    margin: auto;
+    z-index: 300;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(156, 149, 149);
+    cursor: pointer;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .frwrd:hover {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+  }
+}

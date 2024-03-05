@@ -1,0 +1,195 @@
+@import "../../style.scss";
+
+.post {
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+
+    .post-container {
+      .post-wrapper {
+        width: 100%;
+        padding: 5px 0;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: themed("post_wrapper");
+        margin-bottom: 20px;
+        border: 1px solid themed("post_wrapper_b");
+
+        @include mobile {
+          margin-bottom: 10px;
+          border-radius: 0;
+          background-color: themed("lb");
+        }
+        .post-top {
+          width: 100%;
+
+          .post-img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+          }
+        }
+        .post-center {
+          padding: 7px 15px;
+
+          .post-desc {
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            word-spacing: 1px;
+            text-align: start;
+            word-wrap: break-word; /* or overflow-wrap: break-word; */
+            white-space: pre-line;
+            padding: 5px;
+            margin-bottom: 10px;
+            color: themed("txt");
+          }
+        }
+
+        .hr-wrapper {
+          padding: 0 30px;
+          .hr {
+            border: none;
+            height: 0.2px;
+            background-color: themed("hr2");
+            margin-bottom: 15px;
+          }
+        }
+
+        .post-bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5px 30px;
+
+          .post-bottom-left {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 5px;
+
+            .posted-by-userimg {
+              height: 30px;
+              width: 30px;
+              border-radius: 7px;
+              border: 2px solid rgb(140, 140, 224);
+            }
+
+            .post-info {
+              display: flex;
+              flex-direction: column;
+
+              .name {
+                font-size: 15px;
+                font-weight: 700;
+                cursor: pointer;
+                color: themed("txt");
+              }
+
+              .date {
+                font-size: 10px;
+                font-weight: 400;
+                color: themed("txt");
+              }
+            }
+          }
+
+          .post-bottom-right {
+            display: flex;
+            justify-content: end;
+            gap: 17px;
+            align-items: center;
+
+            .action {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 3px;
+
+              .icon {
+                height: 25px;
+                width: 25px;
+                cursor: pointer;
+              }
+            }
+
+            .action1 {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 3px;
+
+              .icon {
+                height: 22px;
+                width: 22px;
+                cursor: pointer;
+                margin-left: 3px;
+              }
+
+              .count {
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                color: themed("txt");
+              }
+            }
+
+            .action2 {
+              display: flex;
+              align-items: center;
+              gap: 3px;
+
+              .icon {
+                height: 22px;
+                width: 22px;
+                cursor: pointer;
+                margin-left: 3px;
+              }
+
+              .count {
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                color: themed("txt");
+              }
+            }
+
+            .action3 {
+              display: flex;
+              align-items: center;
+              gap: 3px;
+              position: relative;
+
+              .menuWrapper {
+                position: absolute;
+                padding: 10px;
+                background-color: #fff;
+                right: -25px;
+                bottom: 25px;
+                z-index: 999;
+                border: 1px solid themed("hr");
+                background-color: themed("mobile_bg");
+                gap: 3px;
+                border-radius: 5px;
+
+                button {
+                  white-space: nowrap;
+                  background-color: themed("mobile_bg");
+                  color: themed("txt");
+                  border: none;
+                  font-size: 12px;
+                  font-weight: 400;
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

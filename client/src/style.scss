@@ -1,0 +1,62 @@
+$themes: (
+  light: (
+    nav: #fbf6ee,
+    lb: #f7efe5,
+    cb: #e3e1d9,
+    rb: #ece8dd,
+    txt: #444444,
+    border_b: #ebe8e3,
+    post_wrapper: #fff,
+    post_wrapper_b: lightgray,
+    hr: lightgrey,
+    hr2: rgb(218, 205, 205),
+    comment_bc: rgb(238, 229, 229),
+    mobile_bg: lightgray,
+    story_b: rgb(163, 158, 158),
+    border_f: rgb(223, 219, 219),
+  ),
+  dark: (
+    nav: #222222,
+    lb: #222222,
+    cb: #2d2727,
+    rb: #2d2727,
+    txt: #c4b6b6,
+    border_b: #413f42,
+    post_wrapper: #181818,
+    post_wrapper_b: #2b2b2b,
+    hr: #212121,
+    hr2: #2e2d2d,
+    comment_bc: #2e2d2d,
+    mobile_bg: black,
+    story_b: rgb(51, 49, 49),
+    border_f: rgb(49, 47, 47),
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}

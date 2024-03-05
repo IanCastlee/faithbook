@@ -1,0 +1,206 @@
+@import "../../style.scss";
+
+.verse {
+  @include themify($themes) {
+    width: 100%;
+    background-color: themed("cb");
+    padding: 20px 50px;
+    top: 60px;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      padding: 0;
+      top: 60px;
+      height: calc(100vh - 60px);
+      width: 100%;
+    }
+
+    .verse-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 60px;
+
+      @include mobile {
+        height: 100%;
+        padding: 0;
+      }
+
+      .verse-wrapper {
+        width: 400px;
+        height: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        @include mobile {
+          height: 100%;
+          width: 100%;
+        }
+
+        .bgImg {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          overflow: hidden;
+          // box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          //   rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          //   rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+          // box-shadow: 0px 0px 97px -26px rgba(0, 0, 0, 0.75);
+          // -webkit-box-shadow: 0px 0px 97px -26px rgba(0, 0, 0, 0.75);
+          // -moz-box-shadow: 0px 0px 97px -26px rgba(0, 0, 0, 0.75);
+
+          // object-fit: fill;
+
+          @include mobile {
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+          }
+        }
+
+        .bck {
+          position: absolute;
+          left: 0px;
+          color: rgb(173, 168, 168);
+          font-size: 35px;
+          cursor: pointer;
+          z-index: 999;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+
+          background-color: transparent;
+          backdrop-filter: blur(10px);
+        }
+
+        .frw {
+          position: absolute;
+          right: 0px;
+          font-size: 35px;
+          color: rgb(173, 168, 168);
+          cursor: pointer;
+          z-index: 999;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+
+          background-color: transparent;
+          backdrop-filter: blur(10px);
+        }
+
+        .name-date {
+          display: flex;
+          flex-direction: column;
+          color: themed("txt");
+          position: absolute;
+          top: 20px;
+          left: 10px;
+
+          text-shadow: -2px -2px 20px rgb(255, 255, 255),
+            -2px -2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+
+          .profile-name {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 8px;
+
+            .verse-profile {
+              height: 33px;
+              width: 33px;
+              border-radius: 7px;
+              border: 2px solid rgb(140, 140, 224);
+            }
+            .vname {
+              font-size: 16px;
+              font-weight: 700;
+              color: rgb(0, 0, 0);
+            }
+          }
+
+          .vdate {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+          }
+        }
+
+        .moreIcon {
+          font-size: 25px;
+          font-weight: 700;
+          cursor: pointer;
+          color: rgb(0, 0, 0);
+          position: absolute;
+          top: 20px;
+          right: 10px;
+        }
+
+        .menuWrapper {
+          position: absolute;
+          padding: 10px;
+          background-color: #fff;
+          top: 45px;
+          right: 5px;
+          z-index: 50;
+          border: 1px solid themed("hr");
+          background-color: themed("lb");
+          gap: 3px;
+          border-radius: 5px;
+
+          button {
+            white-space: nowrap;
+            background-color: themed("lb");
+            color: themed("txt");
+            border: none;
+            font-size: 12px;
+            font-weight: 400;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+          }
+        }
+      }
+
+      .verse-desc {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 330px;
+        max-height: 350px;
+        overflow: scroll;
+        font-size: 21px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 0.3px;
+        color: rgb(22, 21, 21);
+        padding: 20px;
+        border-radius: 10px;
+        word-wrap: break-word;
+
+        text-shadow: -2px -2px 20px rgba(252, 251, 249, 0.6),
+          -2px -2px 20px rgba(206, 201, 189, 0.6),
+          -2px -2px 20px rgba(206, 206, 206, 0.6);
+
+        @include mobile {
+          max-width: 330px;
+          max-height: 400px;
+        }
+      }
+    }
+  }
+}

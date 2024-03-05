@@ -1,0 +1,156 @@
+@import "../../style.scss";
+
+.leftbar {
+  @include themify($themes) {
+    width: 25%;
+    // background: linear-gradient(to right, #acd3e7, #fff);
+    background-color: themed("lb");
+    top: 60px;
+    height: calc(100vh - 60px);
+    box-shadow: "2px 2px 5px rgba(0, 0, 0, 0.1)";
+    overflow: scroll;
+    position: sticky;
+
+    @include mobile {
+      display: none;
+    }
+
+    .left-container {
+      width: 100%;
+      padding: 35px 20px;
+      .left-top-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .profile-events {
+          width: 100%;
+          background-color: themed("lb");
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+
+          .profile-name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .profile-img {
+              height: 40px;
+              width: 40px;
+              border-radius: 50%;
+              cursor: pointer;
+              border: 2px solid rgb(178, 178, 233);
+            }
+
+            .l-name {
+              font-weight: 700;
+              cursor: pointer;
+              font-size: 15px;
+              color: themed("txt");
+            }
+          }
+
+          .l-eventwrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .notif {
+              font-size: 12px;
+              font-weight: 500;
+              color: themed("txt");
+            }
+          }
+        }
+
+        .hrt {
+          border: none;
+          height: 0.5px;
+          background-color: themed("hr2");
+        }
+
+        .left-user {
+          display: flex;
+          align-items: center;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            height: 30px;
+            width: 30px;
+          }
+
+          .username {
+            font-size: 17px;
+            font-weight: 500;
+            color: themed("txt");
+          }
+        }
+
+        .list {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          gap: 13px;
+          padding: 5px;
+          margin-bottom: 10px;
+          img {
+            height: 25px;
+            width: 25px;
+          }
+
+          .item {
+            font-size: 17px;
+            font-weight: 500;
+            color: themed("txt");
+          }
+        }
+        .list:hover {
+          background-color: themed("comment_bc");
+          border-radius: 5px;
+        }
+      }
+      .hr {
+        border: none;
+        height: 0.5px;
+        background-color: themed("hr2");
+        margin: 10px 0;
+      }
+
+      .left-bottom-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-size: 18px;
+          font-weight: 700;
+          margin-bottom: 5px;
+          color: themed("txt");
+        }
+
+        .list {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          gap: 10px;
+          padding: 5px;
+          margin-bottom: 10px;
+          img {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+          }
+
+          .item {
+            font-size: 13px;
+            font-weight: 500;
+            color: themed("txt");
+          }
+        }
+      }
+    }
+  }
+}

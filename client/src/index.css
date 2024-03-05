@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+
+  &&::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* <div className="userStory">
+{isPending
+  ? "loading.."
+  : data.map((story) => (
+      <div className="userStoryContainer" key={story.id}>
+        <div className="story_uploader">
+          <div className="infoWrapper">
+            <span>{story.name}</span>
+            <p>{moment(story.createdAt).fromNow()}</p>
+          </div>
+
+          <IoMdMore className="moreICon" />
+        </div>
+        <div className="story-container">
+          <IoIosArrowBack className="back_icon" />
+          <div className="story-wrapper">
+            <p>{story.verse}</p>
+          </div>
+          <IoIosArrowForward className="forward_icon" />
+        </div>
+      </div>
+    ))}
+</div> */

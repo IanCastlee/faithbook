@@ -1,0 +1,138 @@
+@import "../../../style.scss";
+
+.knock {
+  @include themify($themes) {
+    background-color: themed("lb");
+    padding: 15px;
+
+    .knock-container {
+      width: 100%;
+
+      .topK {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        .title {
+          font-size: 18px;
+          color: themed("txt");
+          font-weight: 700;
+        }
+
+        .searchK {
+          height: 40px;
+          width: 300px;
+          background-color: themed("cb");
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          padding-left: 20px;
+          border-radius: 25px;
+          @include mobile {
+            width: 250px;
+          }
+
+          .search {
+            height: 35px;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            color: themed("txt");
+            background-color: themed("cb");
+          }
+          .search:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .hr {
+        border: none;
+        height: 0.2px;
+        background-color: themed("hr2");
+        margin: 10px 0;
+      }
+
+      .knock-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid themed("border_f");
+        padding: 5px 0;
+
+        .img-name-add {
+          display: flex;
+          flex-direction: column;
+          .img-name {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .img {
+              height: 35px;
+              width: 35px;
+              border-radius: 10px;
+            }
+
+            .name {
+              font-size: 16px;
+              font-weight: 500;
+              cursor: pointer;
+              color: themed("txt");
+            }
+          }
+
+          .add {
+            font-size: 12px;
+            font-weight: 400;
+            color: themed("txt");
+            margin-left: 37px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+          }
+        }
+      }
+
+      .rightFr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+
+        .kyd {
+          font-size: 12px;
+          color: themed("txt");
+        }
+        .actionK {
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+          .btn-unfollow {
+            border: none;
+            padding: 5px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            background-color: #b80000;
+            border-radius: 2px;
+            cursor: pointer;
+          }
+
+          .btn-follow {
+            border: none;
+            padding: 5px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            background-color: #0079ff;
+            border-radius: 2px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

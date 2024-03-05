@@ -1,0 +1,59 @@
+@import "../../style.scss";
+
+.userSetting {
+  @include themify($themes) {
+    position: absolute;
+    right: 5px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 10px 30px 10px 10px;
+    box-shadow: 0 3px 3px 3px rgba(59, 55, 55, 0.3);
+    color: themed("txt");
+    background-color: themed("lb");
+    top: 60px;
+
+    .userConatainer {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+
+      .setting {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 15px;
+        color: themed("txt");
+        cursor: pointer;
+      }
+
+      .wrapper-s {
+        font-size: 15px;
+        color: themed("txt");
+
+        .light,
+        .dark {
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          font-size: 15px;
+          color: themed("txt");
+          gap: 5px;
+          cursor: pointer;
+          .s,
+          .m {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .logout {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: themed("txt");
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}
