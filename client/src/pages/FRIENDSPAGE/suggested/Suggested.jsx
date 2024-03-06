@@ -61,7 +61,7 @@ const Suggested = () => {
                     className="btn-follow"
                     onClick={() => handleAccept(s.id)}
                   >
-                    Knock
+                    Knockkkkkkk
                   </button>
                 </div>
               </div>

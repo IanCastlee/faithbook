@@ -27,6 +27,7 @@ const Friend = () => {
 
   const handleDel = (frIdDelMain) => {
     mutationDel.mutate(frIdDelMain);
+    console.log("clicked DE");
   };
 
   console.log(friendata);

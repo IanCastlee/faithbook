@@ -75,7 +75,7 @@ const FriendReq = () => {
                     />
                     <Link
                       style={{ textDecoration: "none" }}
-                      to={`/profile/${k.userId}`}
+                      to={`/profile/${k.id}`}
                     >
                       <span className="name">{k.name}</span>
                     </Link>
@@ -91,13 +91,13 @@ const FriendReq = () => {
                   <div className="actionK">
                     <button
                       className="btn-unfollow"
-                      onClick={() => handleDel(k.userId)}
+                      onClick={() => handleDel(k.id)}
                     >
                       Close
                     </button>
                     <button
                       className="btn-follow"
-                      onClick={() => handleAccept(k.userId)}
+                      onClick={() => handleAccept(k.id)}
                     >
                       Open
                     </button>
