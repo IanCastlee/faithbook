@@ -77,6 +77,7 @@
           align-items: center;
           align-items: center;
           gap: 10px;
+          margin-bottom: 5px;
 
           img {
             height: 30px;
@@ -97,6 +98,13 @@
           gap: 13px;
           padding: 5px;
           margin-bottom: 10px;
+
+          &.active {
+            // color: rgb(140, 140, 224);
+            background-color: themed("cb");
+            //border-radius: 25px;
+            // padding-left: 30px;
+          }
           img {
             height: 25px;
             width: 25px;
@@ -110,7 +118,7 @@
         }
         .list:hover {
           background-color: themed("comment_bc");
-          border-radius: 5px;
+          border-radius: 25px;
         }
       }
       .hr {

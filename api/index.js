@@ -12,7 +12,8 @@ import userPostsRoutes from "./routes/userPosts.js";
 import relationshipRoutes from "./routes/relationships.js";
 import authUserVerseRoutes from "./routes/userVerse.js"; 
 import authAllVerseRoutes from "./routes/allVerses.js"; 
-import authAFrRoutes from "./routes/friends.js"; 
+import authAFrRoutes from "./routes/friends.js";
+import authMessages from "./routes/messages.js";
 
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -60,6 +61,7 @@ app.use("/api/relationships", relationshipRoutes);
 app.use("/api/userVerse", authUserVerseRoutes);
 app.use("/api/allVerse", authAllVerseRoutes);
 app.use("/api/friendReqs", authAFrRoutes);
+app.use("/api/messages", authMessages);
 
 
 

@@ -10,9 +10,24 @@ export const getStories = (req, res) => {
     if (err) return res.status(403).json("Token is not valid!");
 
 
-    const q = `SELECT DISTINCT s.*, u.id AS userId, name, profilePic FROM stories AS s JOIN users AS u ON (u.id = s.userId) LEFT JOIN relationship AS r ON (s.userId = r.followedUserId) WHERE r.followerUserId = ? OR s.userId = ? ORDER BY s.createdAt DESC`;
+    // const q = `SELECT DISTINCT s.*, u.id AS userId, name, profilePic FROM stories AS s JOIN users AS u ON (u.id = s.userId) LEFT JOIN relationship AS r ON (s.userId = r.followedUserId) WHERE r.followerUserId = ? OR s.userId = ? ORDER BY s.createdAt DESC`;
 
-    const values = [userInfo.id, userInfo.id];
+
+    const q = `
+  SELECT DISTINCT s.*, u.id AS userId, name, profilePic
+  FROM stories AS s
+  JOIN users AS u ON (u.id = s.userId)
+  JOIN relationship AS r1 ON (s.userId = r1.followedUserId AND r1.followerUserId = ?)
+  JOIN relationship AS r2 ON (s.userId = r2.followerUserId AND r2.followedUserId = ?)
+  
+  UNION
+
+  SELECT DISTINCT s.*, u.id AS userId, name, profilePic
+  FROM stories AS s
+  JOIN users AS u ON (u.id = s.userId)
+  WHERE s.userId = ? ORDER BY createdAt DESC`;
+
+    const values = [userInfo.id, userInfo.id, userInfo.id];
 
     db.query(q, values, (err, data) => {
       return res.status(200).json(data);

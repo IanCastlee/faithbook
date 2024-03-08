@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./left.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
@@ -6,9 +6,26 @@ import { useQueryClient } from "@tanstack/react-query";
 
 const Left = () => {
   const { currentUser } = useContext(AuthContext);
+  const [home, setHome] = useState(true);
+  const [testimony, setTestimony] = useState(false);
+  const [friend, setFriend] = useState(false);
 
-  // const queryClient = useQueryClient();
-  console.log(currentUser);
+  const handleHome = () => {
+    setHome(!home);
+    setTestimony(false);
+    setFriend(false);
+  };
+  const handleTestimony = () => {
+    setTestimony(!testimony);
+    setHome(false);
+    setFriend(false);
+  };
+  const handleFriend = () => {
+    setFriend(!friend);
+    setHome(false);
+    setTestimony(false);
+  };
+
   return (
     <div className="leftbar">
       <div className="left-container">
@@ -41,23 +58,32 @@ const Left = () => {
           <hr className="hrt" />
 
           <Link to="/" style={{ textDecoration: "none" }}>
-            <div className="list">
+            <div
+              className={`list ${home ? "active" : ""}`}
+              onClick={handleHome}
+            >
               <img src="../assets/home-sweet-home.png" alt="" />
               <span className="item">Home</span>
             </div>
           </Link>
 
           <Link to="/testimony" style={{ textDecoration: "none" }}>
-            <div className="list">
+            <div
+              className={`list ${testimony ? "active" : ""}`}
+              onClick={handleTestimony}
+            >
               <img src="../assets/testimonials.png" alt="" />
-              <span className="item">Testimonies</span>
+              <span className="item">Testimony</span>
             </div>
           </Link>
 
           <Link to="door/friend" style={{ textDecoration: "none" }}>
-            <div className="list">
+            <div
+              className={`list ${friend ? "active" : ""}`}
+              onClick={handleFriend}
+            >
               <img src="../assets/friends (1).png" alt="" />
-              <span className="item">Friends</span>
+              <span className="item">Friend</span>
             </div>
           </Link>
 

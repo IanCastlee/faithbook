@@ -1,10 +1,10 @@
 @import "../../style.scss";
 .d-wrapper {
   @include themify($themes) {
-    width: 300px;
+    width: 330px;
     position: absolute;
-    right: 0;
-    height: 400px;
+    right: 5px;
+    height: 550px;
     top: 60px;
     background-color: themed("lb");
     display: flex;
@@ -18,14 +18,152 @@
     @include mobile {
       height: 100vh;
       width: 100%;
+      right: 0;
     }
-    &.closed {
-      display: none;
+    // &.closed {
+    //   display: none;
+    // }
+
+    .top-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .top-left {
+        display: flex;
+
+        .top-left-title {
+          font-size: 20px;
+          font-weight: 700;
+          color: themed("txt");
+        }
+      }
+
+      .top-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .topIcon {
+          color: themed("txt");
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
     }
 
-    h5 {
-      font-size: 30px;
-      color: themed("txt");
+    .search-wrapperrr {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      width: 100%;
+      margin-top: 10px;
+      background-color: themed("comment_bc");
+      border-radius: 25px;
+      padding-left: 10px;
+      border: 0.5px solid themed("border_f");
+
+      .searchIcon {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .search {
+        width: 85%;
+        height: 35px;
+        color: themed("txt");
+        background-color: themed("comment_bc");
+        padding-left: 10px;
+        font-size: 16px;
+        border: none;
+      }
+      .search:focus {
+        outline: none;
+      }
+    }
+    .online-title {
+      font-size: 14px;
+      color: green;
+      //color: themed("txt");
+      font-weight: 500;
+      margin: 10px 20px 5px 20px;
+    }
+
+    .online-friend-wrapper {
+      overflow-x: auto;
+      padding: 0 15px 15px 15px;
+      .online-friend {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        .online-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .online-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid rgb(126, 196, 22);
+
+            @include mobile {
+              width: 45px;
+              height: 45px;
+            }
+          }
+          .online-name {
+            font-size: 12px;
+            font-weight: 400;
+            color: themed("txt");
+          }
+        }
+      }
+    }
+
+    .chat-content {
+      width: 100%;
+      padding: 5px 15px;
+      overflow-y: scroll;
+
+      .chat-continer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .chat-wrapper {
+          width: 100%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .chat-img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: 1px solid rgb(6, 177, 6);
+
+            @include mobile {
+              width: 45px;
+              height: 45px;
+            }
+          }
+
+          .chat-name {
+            font-size: 16px;
+            color: themed("txt");
+            font-weight: 500;
+          }
+          .chat-desc {
+            font-size: 10px;
+            font-weight: 500;
+            color: themed("txt");
+          }
+        }
+      }
     }
   }
 }

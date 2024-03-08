@@ -1,11 +1,10 @@
 import { useState } from "react";
 import "./notic.scss";
 
-const NotifDrop = () => {
-  const [showMessageBox] = useState(true);
+const NotifDrop = ({ setNotifBox }) => {
   return (
     <>
-      <div className="n-wrapper" onClick={showMessageBox}>
+      <div className="n-wrapper" onClick={() => setNotifBox(false)}>
         <span>Hello</span>
         <span>Hello</span>
         <span>Hello</span>

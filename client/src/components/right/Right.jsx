@@ -56,8 +56,6 @@ const Right = () => {
     queryClient.invalidateQueries({ queryKey: ["user"] });
   };
 
-  console.log(dataKnocking);
-
   return (
     <div className="rightbar">
       <div className="rightbar-container">
@@ -110,13 +108,13 @@ const Right = () => {
                       <div className="btn-knock">
                         <button
                           className="btn-open"
-                          onClick={() => handleAccept(k.userId)}
+                          onClick={() => handleAccept(k.id)}
                         >
                           Accept
                         </button>
                         <button
                           className="btn-close"
-                          onClick={() => handleDel(k.userId)}
+                          onClick={() => handleDel(k.id)}
                         >
                           Decline
                         </button>

@@ -18,16 +18,37 @@ import NotifDrop from "../dropdown/NotifDrop";
 const Navar = () => {
   const { currentUser } = useContext(AuthContext);
 
+  const [showUsersetting, setUserSetting] = useState(false);
   const [showMessageBox, setMessageBox] = useState(false);
   const [showNotifBox, setNotifBox] = useState(false);
-  const [usersetting, setUserSetting] = useState(false);
+  const [showFriend, setShowFriend] = useState(false);
 
+  const handleMsg = () => {
+    setMessageBox(!showMessageBox);
+    setNotifBox(false);
+    setShowFriend(false);
+  };
+  const handleNoti = () => {
+    setNotifBox(!showNotifBox);
+    setMessageBox(false);
+    setShowFriend(false);
+  };
+
+  const handleFrnd = () => {
+    setShowFriend(!showFriend);
+    setNotifBox(false);
+    setMessageBox(false);
+  };
+
+  const handleProfile = () => {
+    setUserSetting(!showUsersetting);
+  };
   return (
     <>
       <div className="navbar">
         <div className="nav-left">
           <Link to="/" style={{ textDecoration: "none" }}>
-            <span className="logo">
+            <span className="logo" onClick={() => setShowFriend(false)}>
               <img
                 src="../assets/connect.png"
                 style={{ height: "40px", width: "40px", borderRadius: "10px" }}
@@ -57,7 +78,10 @@ const Navar = () => {
             <input type="text" placeholder="Search..." />
             <LiaSearchSolid className="searcIcon" />
           </div>
-          <div className="nav-friend-wrapper">
+          <div
+            className={`nav-friend-wrapper ${showFriend ? "activee" : ""}`}
+            onClick={handleFrnd}
+          >
             <Link style={{ textDecoration: "none" }} to="door/friend">
               {" "}
               <img
@@ -71,42 +95,28 @@ const Navar = () => {
 
           <>
             <div
-              className="nav-mail-wrapper"
-              onClick={() => {
-                setMessageBox(!showMessageBox);
-                setUserSetting(false);
-                setNotifBox(false);
-              }}
+              className={`nav-mail-wrapper ${showMessageBox ? "activee" : ""}`}
+              onClick={handleMsg}
             >
               <img src="../assets/mail.png" alt="" className="nav_iconn" />
               <span className="dot_1">4</span>
             </div>
-            {showMessageBox && <Dropdown />}
+            {showMessageBox && <Dropdown setMessageBox={setMessageBox} />}
           </>
 
           <>
             <div
-              className="nav-bell-wrapper"
-              onClick={() => {
-                setNotifBox(!showNotifBox);
-                setUserSetting(false);
-                setMessageBox(false);
-              }}
+              className={`nav-bell-wrapper ${showNotifBox ? "activee" : ""}`}
+              onClick={handleNoti}
             >
               <img src="../assets/bell.png" alt="" className="nav_iconn" />
               <span className="dot_2">2</span>
             </div>
-            {showNotifBox && <NotifDrop />}
+            {showNotifBox && <NotifDrop setNotifBox={setNotifBox} />}
           </>
 
           <>
-            <div
-              className="nav_current_user"
-              onClick={() => {
-                setUserSetting(!usersetting);
-                setMessageBox(false);
-              }}
-            >
+            <div className="nav_current_user" onClick={handleProfile}>
               <img
                 src={
                   currentUser.profilePic === ""
@@ -115,9 +125,11 @@ const Navar = () => {
                 }
                 alt=""
               />
-              <span className="nav_user">{currentUser.name.split(" ")[0]}</span>
+              <span className={`nav_user ${showUsersetting ? "activee" : ""}`}>
+                {currentUser.name.split(" ")[0]}
+              </span>
             </div>
-            {usersetting && <UserDropdown />}
+            {showUsersetting && <UserDropdown />}
           </>
         </div>
       </div>

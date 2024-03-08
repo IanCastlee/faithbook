@@ -143,6 +143,11 @@
 
       .nav-friend-wrapper {
         position: relative;
+
+        &.activee {
+          border-bottom: 2px solid blue;
+        }
+
         .nav_iconn1 {
           cursor: pointer;
           height: 24px;
@@ -168,6 +173,10 @@
 
       .nav-mail-wrapper {
         position: relative;
+
+        &.activee {
+          border-bottom: 2px solid blue;
+        }
         .nav_iconn {
           cursor: pointer;
           height: 20px;
@@ -193,6 +202,11 @@
 
       .nav-bell-wrapper {
         position: relative;
+
+        &.activee {
+          border-bottom: 2px solid blue;
+        }
+
         .nav_iconn {
           cursor: pointer;
           height: 20px;
@@ -222,11 +236,11 @@
         align-items: center;
 
         img {
-          height: 30px;
-          width: 30px;
+          height: 28px;
+          width: 28px;
           border-radius: 50%;
           cursor: pointer;
-          border: 3px solid rgb(140, 140, 224);
+          border: 2px solid rgb(140, 140, 224);
         }
 
         span {
@@ -235,6 +249,10 @@
           cursor: pointer;
           color: themed("txt");
           white-space: nowrap;
+
+          &.activee {
+            color: rgb(140, 140, 224);
+          }
 
           @include mobile {
             display: none;

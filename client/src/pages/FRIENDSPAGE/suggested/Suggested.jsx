@@ -6,7 +6,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../../axios";
 
 const Suggested = () => {
-  //const queryClient = useQueryClient();
+  const queryClient = useQueryClient();
 
   // S U G G E S T  I O N ===> G E T
   const { isPending, data: suggestionData } = useQuery({
@@ -16,6 +16,21 @@ const Suggested = () => {
         return res.data;
       }),
   });
+
+  //R E L A T I O N S H I P ===> P O S T
+  const mutation = useMutation({
+    mutationFn: (add) => makeRequest.post("/friendReqs", add),
+    onSuccess: (data) => {
+      console.log("Mutation success:", data);
+      queryClient.invalidateQueries({ queryKey: ["suggestionn"] });
+    },
+    onError: (error) => {
+      console.error("Mutation error:", error);
+    },
+  });
+  const handleAccept = (frID) => {
+    mutation.mutate({ frID });
+  };
 
   return (
     <div className="suggeted">
@@ -61,7 +76,7 @@ const Suggested = () => {
                     className="btn-follow"
                     onClick={() => handleAccept(s.id)}
                   >
-                    Knockkkkkkk
+                    Knock
                   </button>
                 </div>
               </div>
