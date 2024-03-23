@@ -2,19 +2,26 @@
 
 .navbar {
   @include themify($themes) {
+    .active {
+      border-bottom: 2px solid blue;
+    }
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px 30px;
     height: 60px;
     background-color: themed("nav");
-    border-bottom: 1px solid themed("border_b");
-
-    //box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid themed("cb");
     position: fixed;
     top: 0;
     z-index: 999;
     width: 100%;
+
+    @include mobile {
+      height: 50px;
+      background-color: themed("navmain");
+    }
 
     .nav-left {
       display: flex;
@@ -32,6 +39,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-right: 30px;
+
+        img {
+          @include mobile {
+            display: none;
+          }
+        }
 
         .wrd {
           display: flex;
@@ -39,10 +53,40 @@
           margin-left: -20px;
 
           @include mobile {
-            display: none;
+            color: themed("txt");
           }
         }
       }
+
+      // .nav-friend-wrapper {
+      //   position: relative;
+
+      //   &.activee {
+      //     border-bottom: 2px solid blue;
+      //   }
+
+      //   .nav_iconn1 {
+      //     cursor: pointer;
+      //     height: 24px;
+      //     width: 24px;
+      //   }
+
+      //   .dot_1 {
+      //     height: 12px;
+      //     width: 12px;
+      //     background-color: green;
+      //     border-radius: 50%;
+      //     position: absolute;
+      //     right: -5px;
+      //     top: -1px;
+      //     display: flex;
+      //     justify-content: center;
+      //     align-items: center;
+      //     color: white;
+      //     font-size: 8px;
+      //     border: 1px solid white;
+      //   }
+      // }
     }
 
     .nav-center {
@@ -98,7 +142,7 @@
         align-items: center;
         height: 40px;
         // background-color: #ffdfdf;
-        background-color: themed("comment_bc");
+        background-color: themed("cb");
         border: themed("border_f" solid 1px);
         width: 100%;
         padding: 7px;
@@ -125,7 +169,7 @@
           height: 30px;
           border: none;
           // background-color: #ffdfdf;
-          background-color: themed("comment_bc");
+          background-color: themed("cb");
           color: themed("txt");
           font-size: 15px;
 
@@ -138,36 +182,6 @@
         }
         input::placeholder {
           color: themed("txt");
-        }
-      }
-
-      .nav-friend-wrapper {
-        position: relative;
-
-        &.activee {
-          border-bottom: 2px solid blue;
-        }
-
-        .nav_iconn1 {
-          cursor: pointer;
-          height: 24px;
-          width: 24px;
-        }
-
-        .dot_1 {
-          height: 12px;
-          width: 12px;
-          background-color: green;
-          border-radius: 50%;
-          position: absolute;
-          right: -5px;
-          top: -1px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          font-size: 8px;
-          border: 1px solid white;
         }
       }
 

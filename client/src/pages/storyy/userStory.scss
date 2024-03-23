@@ -11,6 +11,10 @@
     flex-direction: column;
 
     @include mobile {
+      margin-top: 100px;
+    }
+
+    @include mobile {
       padding: 0;
       top: 60px;
       height: calc(100vh - 60px);
@@ -36,6 +40,9 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        // background-color: themed("lb");
+        //border-radius: 5px;
+        padding: 5px;
 
         @include mobile {
           height: 100%;
@@ -47,6 +54,7 @@
           height: 100%;
           border-radius: 10px;
           overflow: hidden;
+          object-fit: contain;
           // box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
           //   rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
           //   rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -70,7 +78,7 @@
           color: rgb(173, 168, 168);
           font-size: 35px;
           cursor: pointer;
-          z-index: 999;
+          z-index: 10;
           width: 40px;
           height: 40px;
           display: flex;
@@ -88,7 +96,7 @@
           font-size: 35px;
           color: rgb(173, 168, 168);
           cursor: pointer;
-          z-index: 999;
+          z-index: 10;
           width: 40px;
           height: 40px;
           display: flex;
@@ -108,8 +116,8 @@
           top: 20px;
           left: 10px;
 
-          text-shadow: -2px -2px 20px rgb(255, 255, 255),
-            -2px -2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
+          // text-shadow: -2px -2px 20px rgb(255, 255, 255),
+          //   -2px -2px 20px rgb(255, 255, 255), -2px -2px 20px rgb(255, 255, 255);
 
           .profile-name {
             display: flex;
@@ -126,14 +134,15 @@
             .vname {
               font-size: 16px;
               font-weight: 700;
-              color: rgb(0, 0, 0);
+              // color: rgb(0, 0, 0);
+              color: themed("txt");
             }
           }
 
           .vdate {
             font-size: 12px;
             font-weight: 500;
-            color: rgb(0, 0, 0);
+            // color: rgb(0, 0, 0);
           }
         }
 
@@ -145,6 +154,10 @@
           position: absolute;
           top: 20px;
           right: 10px;
+
+          .moreIconn {
+            color: themed("txt");
+          }
         }
 
         .menuWrapper {

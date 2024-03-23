@@ -85,6 +85,11 @@ const Login = () => {
             Forgot Password? <strong>Recover</strong>
           </p>
 
+          <span
+            style={{ display: "flex", justifyContent: "center", color: "red" }}
+          >
+            {err && err}
+          </span>
           <span onClick={handleLogin} className="btn_login">
             Login
           </span>

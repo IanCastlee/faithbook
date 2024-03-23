@@ -1,9 +1,4 @@
-import {
-  QueryClient,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import "./userStory.scss";
 
 import { MdDelete, MdEdit } from "react-icons/md";
@@ -57,7 +52,7 @@ const UserStory = () => {
   const queryClient = useQueryClient();
 
   const mutationDel = useMutation({
-    mutationFn: (verseId) => makeRequest.delete("/userVerse/" + verseId),
+    mutationFn: (vrsID) => makeRequest.delete("/userVerse/" + vrsID),
     onSuccess: () => {
       // Invalidate and refetch only the comments for the specific post
       queryClient.invalidateQueries({ queryKey: ["story"] });
@@ -83,15 +78,16 @@ const UserStory = () => {
   ////////////////////////DELETE HANDLE//////////////////////////////////////
   const navigate = useNavigate();
 
-  const handleDel = () => {
-    mutationDel.mutate(dataAll[verseIndex].id);
+  const handleDel = (vrsID) => {
+    // mutationDel.mutate(dataAll[verseIndex].id);
+    mutationDel.mutate(vrsID);
     setMenu(false);
     navigate("/");
   };
 
-  console.log(currentUser.id);
-  console.log(dataAll);
-  console.log(verseIndex);
+  console.log("currentUser :", currentUser.id);
+  console.log("verseID : ", verseID);
+  console.log("verseIndex : ", verseIndex);
 
   return (
     <div className="verse">
@@ -157,19 +153,24 @@ const UserStory = () => {
 
                 <>
                   <span className="moreIcon" onClick={() => setMenu(!menu)}>
-                    <IoMdMore />
+                    <IoMdMore className="moreIconn" />
                   </span>
 
                   {menu && (
                     <div className="menuWrapper">
-                      {menu &&
-                      dataAll[verseIndex].userId === currentUser.id &&
-                      verse.userId === currentUser.id ? (
+                      {(menu && verse.userId === currentUser.id) ||
+                      dataAll[verseIndex].userId === currentUser.id ? (
                         <>
-                          <button onClick={handleDel}>
+                          <button
+                            onClick={() =>
+                              handleDel(
+                                clickedNext ? dataAll[verseIndex].id : verse.id
+                              )
+                            }
+                          >
                             <MdDelete style={{ color: "red" }} /> Delete post
                           </button>
-                          <button onClick={handleDel}>
+                          <button>
                             <MdEdit style={{ color: "red" }} /> Edit post
                           </button>
                         </>

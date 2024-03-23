@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./navbar.scss";
 
 import Dropdown from "../dropdown/Dropdown";
@@ -14,6 +14,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useState } from "react";
 import NotifDrop from "../dropdown/NotifDrop";
+import Navbar_2 from "../navbar_2/Navbar_2";
 
 const Navar = () => {
   const { currentUser } = useContext(AuthContext);
@@ -21,23 +22,19 @@ const Navar = () => {
   const [showUsersetting, setUserSetting] = useState(false);
   const [showMessageBox, setMessageBox] = useState(false);
   const [showNotifBox, setNotifBox] = useState(false);
-  const [showFriend, setShowFriend] = useState(false);
 
   const handleMsg = () => {
     setMessageBox(!showMessageBox);
     setNotifBox(false);
-    setShowFriend(false);
   };
   const handleNoti = () => {
     setNotifBox(!showNotifBox);
     setMessageBox(false);
-    setShowFriend(false);
   };
 
-  const handleFrnd = () => {
-    setShowFriend(!showFriend);
-    setNotifBox(false);
+  const closeAll = () => {
     setMessageBox(false);
+    setNotifBox(false);
   };
 
   const handleProfile = () => {
@@ -47,8 +44,8 @@ const Navar = () => {
     <>
       <div className="navbar">
         <div className="nav-left">
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <span className="logo" onClick={() => setShowFriend(false)}>
+          <Link to="/" onClick={closeAll} style={{ textDecoration: "none" }}>
+            <span className="logo">
               <img
                 src="../assets/connect.png"
                 style={{ height: "40px", width: "40px", borderRadius: "10px" }}
@@ -69,6 +66,17 @@ const Navar = () => {
               </div>
             </span>
           </Link>
+
+          {/* <div className="nav-friend-wrapper" onClick={handleFrnd}>
+            <NavLink style={{ textDecoration: "none" }} to="door/friend">
+              {" "}
+              <img
+                src="../assets/friends (1).png"
+                alt=""
+                className="nav_iconn1"
+              />
+            </NavLink>
+          </div> */}
         </div>
 
         <div className="nav-center"></div>
@@ -77,20 +85,6 @@ const Navar = () => {
           <div className="search-wrapper">
             <input type="text" placeholder="Search..." />
             <LiaSearchSolid className="searcIcon" />
-          </div>
-          <div
-            className={`nav-friend-wrapper ${showFriend ? "activee" : ""}`}
-            onClick={handleFrnd}
-          >
-            <Link style={{ textDecoration: "none" }} to="door/friend">
-              {" "}
-              <img
-                src="../assets/friends (1).png"
-                alt=""
-                className="nav_iconn1"
-              />
-            </Link>
-            {/* <span className="dot_1">1</span> */}
           </div>
 
           <>
@@ -129,6 +123,7 @@ const Navar = () => {
                 {currentUser.name.split(" ")[0]}
               </span>
             </div>
+
             {showUsersetting && <UserDropdown />}
           </>
         </div>

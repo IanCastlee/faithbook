@@ -5,13 +5,12 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { GiShadowFollower } from "react-icons/gi";
 
 import { MdHome } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
 import { MdSchool } from "react-icons/md";
 import { FaBirthdayCake } from "react-icons/fa";
 import { FaGift } from "react-icons/fa";
 import { BiLogoMessenger } from "react-icons/bi";
 import { IoPersonAddSharp } from "react-icons/io5";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
 import UserPost from "../../components/UserPosts/UserPost";
@@ -24,8 +23,6 @@ const Profile = () => {
   const [profileMO, setProfileMo] = useState(null);
   const [option, setOption] = useState(false);
   const [updateModal, setUpdateModal] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false);
 
   //////////////////////////////////////
 
@@ -301,10 +298,11 @@ const Profile = () => {
                         {followerLength && followerLength.length}
                       </span>
                       <span className="follo">
-                        {followerLength && followerLength > 0
+                        {followerLength && followerLength.length > 1
                           ? "Followers"
                           : "Follower"}
                       </span>
+
                       {userId === currentUser.id ? (
                         <button className="btn-follow" onClick={handleFollow}>
                           <GiShadowFollower
@@ -339,10 +337,12 @@ const Profile = () => {
                           <BiSolidEdit style={{ fontSize: "16px" }} /> Update
                         </button>
                       ) : (
-                        <button className="btn-follow">
-                          <BiLogoMessenger style={{ fontSize: "16px" }} />{" "}
-                          Message
-                        </button>
+                        <Link style={{ textDecoration: "none" }}>
+                          <button className="btn-follow">
+                            <BiLogoMessenger style={{ fontSize: "16px" }} />{" "}
+                            Message
+                          </button>
+                        </Link>
                       )}
                     </span>
                   </div>

@@ -2,8 +2,12 @@
 
 .suggeted {
   @include themify($themes) {
-    background-color: themed("lb");
+    background-color: themed("nav");
     padding: 15px;
+
+    @include mobile {
+      margin-top: 100px;
+    }
 
     .suggeted-container {
       width: 100%;
@@ -48,7 +52,7 @@
       .hr {
         border: none;
         height: 0.2px;
-        background-color: themed("hr2");
+        background-color: themed("cb");
         margin: 15px;
       }
 
@@ -58,7 +62,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 15px;
-        border-bottom: 1px solid themed("border_f");
+        border-bottom: 1px solid themed("cb");
 
         .img-name-add {
           display: flex;
@@ -76,22 +80,30 @@
               border: 1px solid themed("hr");
             }
 
-            .name {
-              font-size: 16px;
-              font-weight: 500;
-              cursor: pointer;
-              color: themed("txt");
-            }
-          }
+            .name-addd {
+              display: flex;
+              flex-direction: column;
 
-          .add {
-            font-size: 12px;
-            font-weight: 400;
-            color: themed("txt");
-            margin-left: 37px;
-            display: flex;
-            align-items: center;
-            gap: 3px;
+              .name {
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                color: themed("txt");
+              }
+              .add {
+                font-size: 10px;
+                font-weight: 400;
+                color: themed("txt");
+                display: flex;
+                align-items: center;
+                gap: 3px;
+
+                .addIcon {
+                  color: blue;
+                  font-size: 12px;
+                }
+              }
+            }
           }
         }
       }
@@ -102,11 +114,11 @@
         gap: 5px;
         .btn-follow {
           border: none;
-          padding: 5px 15px;
-          font-size: 14px;
+          padding: 2px 10px;
+          font-size: 12px;
           font-weight: 500;
           color: white;
-          background-color: #0079ff;
+          background-color: #053d83;
           border-radius: 2px;
           cursor: pointer;
         }

@@ -54,12 +54,12 @@
 
       .story-wrapper1 {
         width: 80px;
-        background-color: themed("lb");
+        background-color: themed("nav");
         height: 100%;
         border-radius: 5px;
         // border: themed("story_b") 1px solid;
         overflow: hidden;
-        border: 1px solid themed("post_wrapper");
+        border: 1px solid themed("nav");
 
         transition: scroll 0.5s ease-in-out;
         -webkit-overflow-scrolling: touch;
@@ -83,7 +83,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 700;
           color: themed("txt");
           // border: themed("story_b") 0.5px solid;
@@ -97,12 +97,12 @@
 
       .story-wrapper {
         width: 80px;
-        background-color: themed("lb");
+        background-color: themed("nav");
         height: 100%;
         border-radius: 5px;
         // border: themed("story_b") 1px solid;
         overflow: hidden;
-        border: 1px solid themed("post_wrapper");
+        border: 1px solid themed("nav");
 
         .bgimg {
           background-size: cover;

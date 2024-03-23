@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: themed("post_wrapper");
+    background-color: themed("nav");
     padding: 5px;
     margin-bottom: 1px;
 
@@ -62,7 +62,7 @@
           font-weight: 300;
           padding-left: 20px;
           //border: 1px solid themed("hr");
-          background-color: themed("post_wrapper");
+          background-color: themed("nav");
           color: themed("txt");
           letter-spacing: 0.5px;
         }
@@ -86,9 +86,10 @@
           padding: 3px 15px;
           align-self: flex-end;
           cursor: pointer;
-          background-color: green;
+          background-color: themed("navmain");
           color: #fff;
           border: none;
+          border: 2px solid themed("cb");
           border-radius: 3px;
         }
         .btn-share:focus {

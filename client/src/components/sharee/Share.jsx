@@ -1,17 +1,10 @@
 import "./share.scss";
-import { RiLiveFill } from "react-icons/ri";
 import { BiSolidPhotoAlbum } from "react-icons/bi";
-import { IoSend } from "react-icons/io5";
-import { FaShare } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { makeRequest } from "../../axios";
 
-import {
-  useMutation,
-  useQueryClient,
-  QueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const Share = () => {
   const { currentUser } = useContext(AuthContext);
@@ -45,6 +38,7 @@ const Share = () => {
     let imgUrl = "";
     if (file) imgUrl = await upload();
     mutation.mutate({ desc, img: imgUrl });
+
     setDesc("");
     setFile(null);
   };
@@ -74,7 +68,9 @@ const Share = () => {
         <div className="text-area-wrapper">
           <textarea
             type="text"
-            placeholder={`Share your thoughts, ${currentUser.name}`}
+            placeholder={`Share your thoughts, ${
+              currentUser.name.split(" ")[0]
+            }`}
             onChange={(e) => setDesc(e.target.value)}
             className="share_input"
             value={desc}

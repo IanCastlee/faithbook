@@ -62,13 +62,19 @@ const Suggested = () => {
                       style={{ textDecoration: "none" }}
                       to={`/profile/${s.id}`}
                     >
-                      <span className="name">{s.name}</span>
+                      <div className="name-addd">
+                        <span className="name">{s.name}</span>
+                        <span className="add">
+                          {s.city === "" ? (
+                            ""
+                          ) : (
+                            <IoLocationSharp className="addIcon" />
+                          )}
+                          {s.city}
+                        </span>
+                      </div>
                     </Link>
                   </div>
-                  <span className="add">
-                    <IoLocationSharp className="addIcon" />
-                    {s.city}
-                  </span>
                 </div>
 
                 <div className="actionS">

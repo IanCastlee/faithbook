@@ -11,14 +11,14 @@
         padding: 5px 0;
         border-radius: 5px;
         overflow: hidden;
-        background-color: themed("post_wrapper");
+        background-color: themed("nav");
         margin-bottom: 20px;
-        border: 1px solid themed("post_wrapper_b");
+        // border: 1px solid themed("post_wrapper_b");
 
         @include mobile {
           margin-bottom: 10px;
           border-radius: 0;
-          background-color: themed("lb");
+          background-color: themed("nav");
         }
         .post-top {
           width: 100%;
@@ -51,7 +51,7 @@
           .hr {
             border: none;
             height: 0.2px;
-            background-color: themed("hr2");
+            background-color: themed("cb");
             margin-bottom: 15px;
           }
         }

@@ -73,17 +73,19 @@ const FriendReq = () => {
                       alt=""
                       className="img"
                     />
-                    <Link
-                      style={{ textDecoration: "none" }}
-                      to={`/profile/${k.id}`}
-                    >
-                      <span className="name">{k.name}</span>
-                    </Link>
+                    <div className="name-adddd">
+                      <Link
+                        style={{ textDecoration: "none" }}
+                        to={`/profile/${k.id}`}
+                      >
+                        <span className="name">{k.name}</span>
+                      </Link>
+                      <span className="add">
+                        <IoLocationSharp className="addIcon" />
+                        {k.city}
+                      </span>
+                    </div>
                   </div>
-                  <span className="add">
-                    <IoLocationSharp className="addIcon" />
-                    {k.city}
-                  </span>
                 </div>
 
                 <div className="rightFr">

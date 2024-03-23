@@ -7,7 +7,7 @@ const ViewPost = () => {
   const postt = location.state?.Postt;
 
   console.log(postID);
-  console.log(postt);
+  console.log("s", postt);
   return (
     <div className="viewPost">
       <div className="view-container">

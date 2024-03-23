@@ -1,21 +1,23 @@
 @import "../../style.scss";
 .d-wrapper {
   @include themify($themes) {
-    width: 330px;
+    width: 340px;
     position: absolute;
     right: 5px;
     height: 550px;
     top: 60px;
-    background-color: themed("lb");
+    background-color: themed("nav");
     display: flex;
     flex-direction: column;
     padding: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow: 0 3px 3px 3px rgba(59, 55, 55, 0.3);
+    box-shadow: 0 3px 3px 3px themed("cb");
     color: themed("txt");
+    z-index: 800;
 
     @include mobile {
+      margin-top: 40px;
       height: 100vh;
       width: 100%;
       right: 0;
@@ -60,10 +62,10 @@
       height: 40px;
       width: 100%;
       margin-top: 10px;
-      background-color: themed("comment_bc");
+      background-color: themed("cb");
       border-radius: 25px;
       padding-left: 10px;
-      border: 0.5px solid themed("border_f");
+      //border: 0.5px solid themed("border_f");
 
       .searchIcon {
         font-size: 20px;
@@ -73,7 +75,7 @@
         width: 85%;
         height: 35px;
         color: themed("txt");
-        background-color: themed("comment_bc");
+        background-color: themed("cb");
         padding-left: 10px;
         font-size: 16px;
         border: none;

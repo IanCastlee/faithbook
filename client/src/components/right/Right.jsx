@@ -52,10 +52,6 @@ const Right = () => {
     mutationDel.mutate(frIdDel);
   };
 
-  const handleLoad = () => {
-    queryClient.invalidateQueries({ queryKey: ["user"] });
-  };
-
   return (
     <div className="rightbar">
       <div className="rightbar-container">
@@ -97,7 +93,6 @@ const Right = () => {
                           className="knockimg"
                         />
                         <Link
-                          onClick={handleLoad}
                           style={{ textDecoration: "none" }}
                           to={`/profile/${k.id}`}
                           state={{ Data: k }}
@@ -110,13 +105,13 @@ const Right = () => {
                           className="btn-open"
                           onClick={() => handleAccept(k.id)}
                         >
-                          Accept
+                          Open
                         </button>
                         <button
                           className="btn-close"
                           onClick={() => handleDel(k.id)}
                         >
-                          Decline
+                          Close
                         </button>
                       </div>
                     </div>

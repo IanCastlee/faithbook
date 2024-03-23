@@ -11,7 +11,8 @@
 
     @include mobile {
       width: 100%;
-      background-color: themed("mobile_bg");
+      background-color: themed("lb");
+      margin-top: 100px;
     }
 
     .main-home {
@@ -25,7 +26,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: themed("post_wrapper");
+        background-color: themed("nav");
         margin-bottom: 2px;
         .pl {
           height: 5px;

@@ -107,32 +107,27 @@ const Left = () => {
 
         <div className="left-bottom-wrapper">
           <span className="title">Pages</span>
-          <div className="list">
+          {/* <div className="list">
             <img src="../assets/v5.jpg" alt="" />
             <span className="item">
               Bachelor of Science in Information Technology
             </span>
-          </div>
+          </div> */}
+
+          {/* <div className="list">
+            <img src="../assets/v5.jpg" alt="" />
+            <span className="item">
+              Bachelor of Science in Information Technology
+            </span>
+          </div>*/}
 
           <div className="list">
-            <img src="../assets/v5.jpg" alt="" />
-            <span className="item">
-              Bachelor of Science in Information Technology
-            </span>
+            <img src="../assets/bbbg.jpg" alt="" />
+            <span className="item">Sample Page</span>
           </div>
-
           <div className="list">
             <img src="../assets/v5.jpg" alt="" />
-            <span className="item">
-              Bachelor of Science in Information Technology
-            </span>
-          </div>
-
-          <div className="list">
-            <img src="../assets/v5.jpg" alt="" />
-            <span className="item">
-              Bachelor of Science in Information Technology
-            </span>
+            <span className="item">HEHEHEHH</span>
           </div>
         </div>
       </div>

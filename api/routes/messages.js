@@ -1,9 +1,11 @@
 import express from "express";
-// import { getLikes,} from "../controller/like.js";
+import { sendMessage, getMessages, getConversations } from "../controller/message.js";
 
 const router = express.Router();
 
-router.get("/");
+router.post("/", sendMessage);
+router.get("/", getMessages);
+router.get("/", getConversations);
 
 
 export default router;

@@ -25,8 +25,8 @@
         padding: 10px 10px 10px 20px;
         // background: linear-gradient(to left, #acd3e7, #fff);
         border-radius: 5px;
-        height: 100px;
-        background-color: themed("lb");
+
+        background-color: themed("nav");
 
         .bday-title {
           font-size: 16px;
@@ -45,7 +45,7 @@
             gap: 3px;
 
             .bdy-name {
-              font-size: 15px;
+              font-size: 12px;
               color: themed("txt");
               strong {
                 color: themed("txt");
@@ -59,7 +59,7 @@
         width: 100%;
         padding: 10px 10px 10px 20px;
         border-radius: 5px;
-        background-color: themed("lb");
+        background-color: themed("nav");
 
         .knock-title {
           font-size: 16px;
@@ -121,7 +121,7 @@
       }
       .right-column3 {
         height: 200px;
-        background-color: themed("lb");
+        background-color: themed("nav");
         border-radius: 10px;
       }
     }

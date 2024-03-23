@@ -12,6 +12,7 @@
 
       @include mobile {
         padding: 0;
+        margin-top: 100px;
       }
       .profile-top {
         height: 250px;
@@ -59,7 +60,7 @@
 
         .profileOption {
           padding: 10px;
-          background-color: themed("lb");
+          background-color: themed("nav");
           width: 80px;
           position: absolute;
           left: 150px;
@@ -207,7 +208,7 @@
           justify-content: space-between;
           align-items: center;
           padding: 5px 130px;
-          background-color: themed("post_wrapper");
+          background-color: themed("nav");
           color: themed("txt");
 
           @include mobile {
@@ -215,21 +216,24 @@
           }
 
           .foll {
+            .foll-count {
+              font-size: 12px;
+            }
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: themed("post_wrapper");
+            background-color: themed("nav");
 
             .follo {
               font-size: 12px;
               font-weight: 500;
-              background-color: themed("post_wrapper");
+              background-color: themed("nav");
             }
 
             .btn-follow {
               // background: linear-gradient(to right, #8b49c9, #ff6600);
-              background-color: #21209c;
+              background-color: #4f4fd8;
               color: #fff;
               padding: 7px 10px;
               border: none;
@@ -251,19 +255,19 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: themed("post_wrapper");
+            background-color: themed("nav");
             margin-top: 20px;
             margin-left: 3px;
 
             .follo {
               font-size: 12px;
               font-weight: 500;
-              background-color: themed("post_wrapper");
+              background-color: themed("nav");
             }
 
             .btn-follow {
               // background: linear-gradient(to right, #8b49c9, #ff6600);
-              background-color: #21209c;
+              background-color: #4f4fd8;
               color: #fff;
               padding: 7px 10px;
               border: none;
@@ -286,7 +290,7 @@
           justify-content: center;
           align-items: center;
           padding: 0 0 3px 0;
-          background-color: themed("post_wrapper");
+          background-color: themed("nav");
 
           .user-name {
             font-size: 18px;
@@ -295,7 +299,7 @@
           }
         }
         .bio-container {
-          background-color: themed("post_wrapper");
+          background-color: themed("nav");
 
           width: 100%;
           padding: 15px 20px;
@@ -375,11 +379,15 @@
           height: 50px;
           // background-color: #fff;
           //background: linear-gradient(to right, #663c8d, #d89a71);
-          background-color: #21209c;
+          background-color: themed("navmain");
           border-bottom-left-radius: 20px;
           border-bottom-right-radius: 20px;
           color: themed("txt");
           margin-top: 3px;
+
+          @include mobile {
+            border-radius: 0;
+          }
           .btn-list {
             display: flex;
             justify-content: center;
@@ -408,7 +416,7 @@
 
           @include mobile {
             padding: 0;
-            background-color: themed("mobile_bg");
+            background-color: themed("nav");
           }
 
           .title-wrapper {
@@ -418,7 +426,7 @@
             .pl {
               height: 5px;
               width: 100%;
-              background-color: themed("mobile_bg");
+              background-color: themed("nav");
             }
             .title2 {
               align-self: center;
@@ -430,7 +438,7 @@
             }
             .pr {
               height: 5px;
-              background-color: themed("mobile_bg");
+              background-color: themed("nav");
               width: 100%;
             }
           }
@@ -439,6 +447,7 @@
             display: flex;
             justify-content: center;
             width: 100%;
+            background-color: themed("lb");
           }
         }
       }

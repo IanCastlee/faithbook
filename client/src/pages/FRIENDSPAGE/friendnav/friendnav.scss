@@ -1,8 +1,12 @@
 @import "../../../style.scss";
 .fnav {
   @include themify($themes) {
+    .active {
+      border-bottom: 2px solid blue;
+    }
+
     height: 60px;
-    background-color: themed("lb");
+    background-color: themed("nav");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +16,7 @@
 
     @include mobile {
       border-radius: 0;
+      top: 100px;
     }
 
     .list {

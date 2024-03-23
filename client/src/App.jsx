@@ -18,7 +18,7 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "./context/authContext";
 import UserStory from "./pages/storyy/UserStory";
 import Register_2 from "./pages/register/Register_2";
@@ -26,6 +26,8 @@ import FriendNav from "./pages/FRIENDSPAGE/friendnav/FriendNav";
 import Friend from "./pages/FRIENDSPAGE/friend/Friend";
 import Suggested from "./pages/FRIENDSPAGE/suggested/Suggested";
 import FriendReq from "./pages/FRIENDSPAGE/friendReq/FriendReq";
+import Following from "./pages/FRIENDSPAGE/following/Following";
+import Navbar_2 from "./components/navbar_2/Navbar_2";
 
 const App = () => {
   const { currentUser } = useContext(AuthContext);
@@ -38,6 +40,9 @@ const App = () => {
       <QueryClientProvider client={queryClient}>
         <div id="m" className={`theme-${darkMode ? "dark" : "light"}`}>
           <Navbar />
+          <div className="nav2">
+            <Navbar_2 />
+          </div>
           <div style={{ display: "flex" }}>
             <Left />
             <div className="outlet">
@@ -113,6 +118,10 @@ const App = () => {
             {
               path: "friendreq",
               element: <FriendReq />,
+            },
+            {
+              path: "following",
+              element: <Following />,
             },
           ],
         },

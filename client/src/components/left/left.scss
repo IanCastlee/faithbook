@@ -4,7 +4,7 @@
   @include themify($themes) {
     width: 25%;
     // background: linear-gradient(to right, #acd3e7, #fff);
-    background-color: themed("lb");
+    background-color: themed("nav");
     top: 60px;
     height: calc(100vh - 60px);
     box-shadow: "2px 2px 5px rgba(0, 0, 0, 0.1)";
@@ -24,7 +24,7 @@
 
         .profile-events {
           width: 100%;
-          background-color: themed("lb");
+          background-color: themed("nav");
           margin-bottom: 20px;
           display: flex;
           justify-content: center;
@@ -69,7 +69,7 @@
         .hrt {
           border: none;
           height: 0.5px;
-          background-color: themed("hr2");
+          background-color: themed("cb");
         }
 
         .left-user {
@@ -124,7 +124,7 @@
       .hr {
         border: none;
         height: 0.5px;
-        background-color: themed("hr2");
+        background-color: themed("cb");
         margin: 10px 0;
       }
 

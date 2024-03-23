@@ -11,6 +11,11 @@
     color: themed("txt");
     background-color: themed("lb");
     top: 60px;
+    z-index: 999;
+
+    @include mobile {
+      top: 50px;
+    }
 
     .userConatainer {
       display: flex;
