@@ -18,7 +18,7 @@ export const getAllVerse = (req, res) => {
         });
     });
 };
-
+ 
 export const delVerse = (req, res) => {
 
     const token = req.cookies.accessToken;
