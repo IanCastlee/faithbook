@@ -134,10 +134,11 @@ const Chat = ({ recieverId }) => {
       )}
 
       <div className="input-wrapper">
-        <label htmlFor="imagee" className="l-wrapper">
+        <label htmlFor="file" className="l-wrapper">
           <input
             type="file"
-            id="imagee"
+            id="file"
+            style={{ display: "none" }}
             onChange={(e) => setFile(e.target.files[0])}
           />
           <CiImageOn className="imgIcon" />

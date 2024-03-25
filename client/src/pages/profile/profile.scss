@@ -379,7 +379,7 @@
           height: 50px;
           // background-color: #fff;
           //background: linear-gradient(to right, #663c8d, #d89a71);
-          background-color: themed("navmain");
+          background-color: themed("nav");
           border-bottom-left-radius: 20px;
           border-bottom-right-radius: 20px;
           color: themed("txt");
@@ -405,7 +405,7 @@
               font-weight: 500;
               cursor: pointer;
               white-space: nowrap;
-              color: rgb(207, 202, 202);
+              color: themed("txt");
             }
           }
         }

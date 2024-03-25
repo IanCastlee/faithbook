@@ -45,26 +45,7 @@ const Navar = () => {
       <div className="navbar">
         <div className="nav-left">
           <Link to="/" onClick={closeAll} style={{ textDecoration: "none" }}>
-            <span className="logo">
-              <img
-                src="../assets/connect.png"
-                style={{ height: "40px", width: "40px", borderRadius: "10px" }}
-                alt=""
-              />
-              <div className="wrd">
-                𝙲𝚘𝚗𝚗𝚎𝚌
-                <RiCrossFill
-                  style={{
-                    fontSize: "35px",
-                    marginLeft: "-10px",
-                    marginRight: "-10px",
-                    marginBottom: "10px",
-                    color: "blue",
-                  }}
-                />
-                𝚎𝚍
-              </div>
-            </span>
+            <span className="logo">Sheep</span>
           </Link>
 
           {/* <div className="nav-friend-wrapper" onClick={handleFrnd}>

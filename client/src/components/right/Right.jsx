@@ -61,7 +61,7 @@ const Right = () => {
             <img src="../assets/gift.png" alt="" className="bdy-img" />
             <div className="bday-wrapper">
               <span className="bdy-name">
-                Today is <strong>Naruto's birthday</strong>
+                Today is <strong>Naruto's </strong>birthday
               </span>
               <span className="bdy-name">
                 Today is <strong>Eyhan's</strong> spiritual birthday
