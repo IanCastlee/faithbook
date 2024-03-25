@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./register_2.scss";
 
 import axios from "axios";
-import { RiCrossFill } from "react-icons/ri";
 
 const Register_2 = () => {
   const [inputs, setInputs] = useState({
@@ -71,17 +70,7 @@ const Register_2 = () => {
               className="logo"
               style={{ fontSize: "30px", fontWeight: "700" }}
             >
-              𝙲𝚘𝚗𝚗𝚎𝚌
-              <RiCrossFill
-                style={{
-                  fontSize: "60px",
-                  marginLeft: "-20px",
-                  marginRight: "-20px",
-                  marginBottom: "-10px",
-                  color: "blue",
-                }}
-              />
-              𝚎𝚍
+              Sheep
             </span>
           </Link>
           <h3>Sign Up</h3>

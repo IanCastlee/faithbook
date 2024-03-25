@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import "./login.scss";
-import { RiCrossFill } from "react-icons/ri";
 
 const Login = () => {
   // console.log(err);
@@ -40,17 +39,7 @@ const Login = () => {
               className="logo"
               style={{ fontSize: "30px", fontWeight: "700" }}
             >
-              𝙲𝚘𝚗𝚗𝚎𝚌
-              <RiCrossFill
-                style={{
-                  fontSize: "60px",
-                  marginLeft: "-20px",
-                  marginRight: "-20px",
-                  marginBottom: "-10px",
-                  color: "blue",
-                }}
-              />
-              𝚎𝚍
+              Sheep
             </span>
           </Link>
           <h3>Sign in</h3>
