@@ -23,7 +23,7 @@ import { Server } from "socket.io";
 
 const io = new Server({
   cors: {
-    origin: "https://faithbook-client1-dc73li1fh-eyhan.vercel.app",
+    origin: "https://faithbook-client1.vercel.app",
     methods: ["GET", "POST"],
   }
 });
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 app.use(Express.json());
 app.use(
   cors({
-    origin: "https://faithbook-client1-dc73li1fh-eyhan.vercel.app",
+    origin: "https://faithbook-client1.vercel.app",
    
   })
 );
