@@ -89,7 +89,7 @@ app.use("/api/messages", authMessages);
 //   console.log("API working");
 // });
 
-const server = app.listen(8800, () => {
+const server = app.listen( () => {
   console.log("API working on port 8800");
 });
 
