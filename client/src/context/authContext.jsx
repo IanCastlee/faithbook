@@ -9,13 +9,9 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post(
-      "https://faithbook-api-five.vercel.app/api/auth/login",
-      inputs,
-      {
-        withCredentials: true,
-      }
-    );
+    const res = await axios.post("api/auth/login", inputs, {
+      withCredentials: true,
+    });
 
     setCurrentUser(res.data);
   };
