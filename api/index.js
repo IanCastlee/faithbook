@@ -38,7 +38,7 @@ const io = new Server({
 
 //middlewares
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Credentials", false);
+  res.header("Access-Control-Allow-Credentials", true);
   next();
 });
 app.use(Express.json());
@@ -53,7 +53,7 @@ app.use(cookieParser());
 //
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "../client/public/upload");
+    cb(null, "../client/public/upload"); 
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
