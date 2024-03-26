@@ -124,7 +124,6 @@ const io = new Server({
 });
 
 //middlewares
-//middlewares
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://faithbook-client.vercel.app');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
