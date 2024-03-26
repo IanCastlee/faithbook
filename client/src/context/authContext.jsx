@@ -10,7 +10,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (inputs) => {
     const res = await axios.post(
-      "https://faithbook-p1qjikf1m-eyhan.vercel.app/api/auth/login",
+      "https://faithbook-api-five.vercel.app/api/auth/login",
       inputs,
       {
         withCredentials: true,

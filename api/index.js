@@ -23,7 +23,7 @@ import { Server } from "socket.io";
 
 const io = new Server({
   cors: {
-    origin: "https://faithbook-client1.vercel.app",
+    origin: "https://faithbook-client.vercel.app",
     methods: ["GET", "POST"],
   }
 });
@@ -38,13 +38,13 @@ const io = new Server({
 
 //middlewares
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Credentials", false);
   next();
 });
 app.use(Express.json());
 app.use(
   cors({
-    origin: "https://faithbook-client1.vercel.app",
+    origin: "https://faithbook-client.vercel.app",
    
   })
 );

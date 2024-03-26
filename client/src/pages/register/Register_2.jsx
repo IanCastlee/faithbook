@@ -53,7 +53,7 @@ const Register_2 = () => {
     } else {
       try {
         await axios.post(
-          "https://faithbook-p1qjikf1m-eyhan.vercel.app/api/auth/register",
+          "https://faithbook-api-five.vercel.app/api/auth/register",
           inputs
         );
         setSuccess("Successfully registered!");
