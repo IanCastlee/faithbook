@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import "./viewPost.scss";
+import "./viewpost.scss";
 
 const ViewPost = () => {
   const location = useLocation();
