@@ -23,7 +23,7 @@ import { Server } from "socket.io";
 
 const io = new Server({
   cors: {
-    origin: "https://faithbook-client.vercel.app",
+    origin: "http://localhost:5173",
     methods: ["GET", "POST"],
   }
 });
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 app.use(Express.json());
 app.use(
   cors({
-    origin: "https://faithbook-client.vercel.app",
+    origin: "http://localhost:5173",
    
   })
 );
@@ -53,7 +53,7 @@ app.use(cookieParser());
 //
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "../client/public/upload"); 
+    cb(null, "../client/public/upload");
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
