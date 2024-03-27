@@ -52,10 +52,7 @@ const Register_2 = () => {
       return;
     } else {
       try {
-        await axios.post(
-          "https://faithbook-api-five.vercel.app/api/auth/register",
-          inputs
-        );
+        await axios.post("api/auth/register", inputs);
         setSuccess("Successfully registered!");
         setErr(null);
       } catch (err) {
