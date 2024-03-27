@@ -21,12 +21,12 @@ import multer from "multer";
 
 import { Server } from "socket.io";
 
-const io = new Server({
-  cors: {
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"],
-  }
-});
+// const io = new Server({
+//   cors: {
+//     origin: "http://localhost:5173",
+//     methods: ["GET", "POST"],
+//   }
+// });
 
 // io.on("connection", (socket) => {
 //   console.log(`Someone has connected ${socket.id}`)
@@ -38,8 +38,8 @@ const io = new Server({
 
 //middlewares
 app.use(cors({
-  origin: "http://faithbook-client-chi.vercel.app",
-  credentials: true // Allow sending cookies from frontend
+  origin: "https://faithbook-client-chi.vercel.app",
+  credentials: true // Pahintulutan ang pagpapadala ng cookies mula sa frontend
 }));
 app.use(express.json());
 app.use(cookieParser());
