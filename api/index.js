@@ -38,7 +38,7 @@ const io = new Server({
 
 //middlewares
 app.use(cors({
-  origin: "https://faithbook-client-chi.vercel.app",
+  origin: "http://faithbook-client-chi.vercel.app",
   credentials: true // Allow sending cookies from frontend
 }));
 app.use(express.json());
