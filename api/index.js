@@ -38,7 +38,7 @@ import { Server } from "socket.io";
 
 //middlewares
 app.use(cors({
-  origin: "https://faithbook-client-chi.vercel.app",
+  origin: "http://localhost:5173",
   credentials: true // Pahintulutan ang pagpapadala ng cookies mula sa frontend
 }));
 app.use(express.json());
